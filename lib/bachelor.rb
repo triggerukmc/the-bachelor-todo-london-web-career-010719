@@ -1,5 +1,9 @@
 def get_first_name_of_season_winner(data, season)
-  # code here
+  data.each do |seasons, bio|
+  if seasons == season
+    bio.each {|hash| return hash["name"].split(" ")[0] if hash["status"] == "Winner"}
+  end
+end
 end
 
 def get_contestant_name(data, occupation)
