@@ -38,17 +38,13 @@ def get_average_age_for_season(data, season)
 ages = 0
 i = 0 
   data[season].each do |x|
-
-       x.each do |key,value|
-          if key == "age"
-              ages += value.to_f
-              i += 1
-
-           end
-
-       end
+  x.each do |key,value|
+     if key == "age"
+      ages += value.to_f
+      i += 1
+      end
+    end
   end
   average_age = (ages/i).round
   average_age
- 
 end
