@@ -35,5 +35,15 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  # code here
+  count = 0
+  ages_total = 0
+  data.each do |season_name, season_data|
+    if season_name == season
+      season_data.each do |person|
+        ages_total += person["age"].to_f
+        count += 1
+      end
+    end
+  end
+  count != 0 ? (ages_total / count).round : nil
 end
